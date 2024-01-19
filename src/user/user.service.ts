@@ -34,7 +34,7 @@ export class UserService {
     async UserDelete(id: string) {
         let user = await this.PrismaServise.tb_user.deleteMany({
             where: {
-                id: id,
+                userId: id,
             }
         })
 
@@ -49,7 +49,7 @@ export class UserService {
         let user = await this.PrismaServise.tb_user.updateMany({
             data,
             where: {
-                id: id,
+                userId: id,
             }
         })
 

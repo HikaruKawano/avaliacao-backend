@@ -19,7 +19,7 @@ export class SpiritService {
     async GetSpiritByBrand(brand: string) {
         return this.prismaService.tb_Spirit.findMany({
             where: {
-                brand: brand,
+                brand: brand
             }
         })
     }
@@ -28,7 +28,7 @@ export class SpiritService {
         return this.prismaService.tb_Spirit.updateMany({
             data,
             where: {
-                id: id,
+                spiritId: id
             }
         })
     }
@@ -36,7 +36,7 @@ export class SpiritService {
     async DeleteSpirit(id: string) {
         return this.prismaService.tb_Spirit.deleteMany({
             where: {
-                id: id,
+                spiritId: id,
             }
         })
     }

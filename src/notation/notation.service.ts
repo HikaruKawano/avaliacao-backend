@@ -15,11 +15,11 @@ export class NotationService {
             data: {
                 notation: data.notation,
                 user: {
-                    connect: { id: data.userId },
+                    connect: { userId: data.userId },
                 },
                 spirit: {
                     connect: {
-                        id: data.spiritId
+                        spiritId: data.spiritId
                     }
                 },
             },
@@ -33,7 +33,7 @@ export class NotationService {
     async GetNotationByUser(userid: string) {
         return await this.PrismaService.tb_notation.findMany({
             where: {
-                userid: userid
+                userId: userid
             },
             include: {
                 spirit: true,
